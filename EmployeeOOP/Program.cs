@@ -9,9 +9,11 @@ namespace EmployeeOOP
         {
             try
             {
+                Console.WriteLine("");
                 Console.WriteLine("OOP APPLICATION");
                 Console.WriteLine("---------------");
-
+                Console.WriteLine("* COMMISSION EMPLOYEE *");
+                Console.WriteLine("---------------");
                 //Declarar algunas variables
                 int day, month, year, id;
                 string firstName, lastName;
@@ -42,6 +44,30 @@ namespace EmployeeOOP
 
                 Console.Write("Ingrese salario devengado: ");
                 salary = Convert.ToDecimal(Console.ReadLine());
+
+                Console.WriteLine("Escribe la comisión en porcentaje");
+                float commissionPercentage = Convert.ToSingle(Console.ReadLine());
+                commissionPercentage = commissionPercentage / 100;
+
+                Console.WriteLine("ingrese sus ventas ");
+                decimal sales = Convert.ToDecimal(Console.ReadLine());
+
+                Console.WriteLine("Type your value per hour: ");
+                decimal hourValue = Convert.ToDecimal(Console.ReadLine());
+
+                Employee commissionEmployee = new CommissionEmployee()
+                {
+                    Id = id,
+                    FirstName = firstName,
+                    LastName = lastName,
+                    BirthDate = dateObject,
+                    HiringDate = dateObject,
+                    IsActive = true,
+                    CommissionPercentage = commissionPercentage,
+                    Sales = sales
+                  
+                };
+
 
                 //Esta es la forma de crear objetos a partir de una clase concreta
                 SalaryEmployee salaryEmployee = new SalaryEmployee()

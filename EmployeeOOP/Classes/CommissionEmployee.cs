@@ -17,7 +17,7 @@ namespace EmployeeOOP.Classes
         public override decimal GetValueToPay()
         {
 
-            return Sales 
+            return Sales * (decimal)CommissionPercentage;
         }
 
         public override string ToString()
